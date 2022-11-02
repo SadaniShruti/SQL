@@ -1,0 +1,145 @@
+CREATE TABLE EMP_4(
+empno number(10),
+ename varchar2(10),
+job varchar2(10),
+mgr number(10),
+hiredate varchar2(10),
+sal number(10),
+comm number(10),
+deptno number(10)
+);
+
+insert into EMP_4 values(7839,'KING','PRESIDENT', null , to_date('17-11-1981','dd-mm-yyyy'),5000,150,10);
+
+insert into EMP_4 values(7639,'BLAKE','MANAGER', 7839 , to_date('1-5-1981','dd-mm-yyyy'),2850,450,30);
+
+insert into EMP_4 values(7782,'CLARK','MANAGER', 7839 , to_date('9-6-1981','dd-mm-yyyy'),2450,350,10);
+
+insert into EMP_4 values(7566,'JONES','MANAGER', 7839 , to_date('2-4-1981','dd-mm-yyyy'),2975,250,20);
+
+insert into EMP_4 values(7788,'SCOTT','ANALYST', 7566 , to_date('13-JUL-87','dd-mm-rr')-85,3000,400,20);
+
+insert into EMP_4 values(7982,'FORD','ANALYST', 7566 , to_date('3-12-1981','dd-mm-yyyy')-85,3000,200,20);
+
+insert into EMP_4 values(6778,'SNITH','CLERK', 7566 , to_date('3-12-1981','dd-mm-yyyy'),800,900,20);
+
+insert into EMP_4 values(5577,'ALLEN','SALESMAN', 7667 , to_date('4-12-1981','dd-mm-yyyy'),900,800,20);
+
+insert into EMP_4 values(6587,'WARD','SALESMAN', 6667 , to_date('6-11-1981','dd-mm-yyyy'),1000,1300,20);
+
+insert into EMP_4 values(7588,'MARTIN','SALESMAN', 6667 , to_date('7-10-1981','dd-mm-yyyy'),1250,1600,20);
+
+insert into EMP_4 values(7678,'TURNER','SALESMAN', 6667 , to_date('6-9-1981','dd-mm-yyyy'),1500,1400,30);
+
+insert into EMP_4 values(6778,'SNITH','CLERK', 7566 , to_date('3-12-1981','dd-mm-yyyy'),800,900,20);
+
+insert into EMP_4 values(5577,'ALLEN','SALESMAN', 7667 , to_date('4-12-1981','dd-mm-yyyy'),900,800,20);
+
+insert into EMP_4 values(6587,'WARD','SALESMAN', 6667 , to_date('6-11-1981','dd-mm-yyyy'),1000,1300,20);
+
+insert into EMP_4 values(7588,'MARTIN','SALESMAN', 6667 , to_date('7-10-1981','dd-mm-yyyy'),1250,1600,20);
+
+insert into EMP_4 values(7678,'TURNER','SALESMAN', 6667 , to_date('6-9-1981','dd-mm-yyyy'),1500,1400,30);
+
+insert into EMP_4 values(6778,'SNITH','CLERK', 7566 , to_date('3-12-1981','dd-mm-yyyy'),800,900,20);
+
+insert into EMP_4 values(5577,'ALLEN','SALESMAN', 7667 , to_date('4-12-1981','dd-mm-yyyy'),900,800,20);
+
+insert into EMP_4 values(6587,'WARD','SALESMAN', 6667 , to_date('6-11-1981','dd-mm-yyyy'),1000,1300,20);
+
+insert into EMP_4 values(7588,'MARTIN','SALESMAN', 6667 , to_date('7-10-1981','dd-mm-yyyy'),1250,1600,20);
+
+insert into EMP_4 values(7678,'TURNER','SALESMAN', 6667 , to_date('6-9-1981','dd-mm-yyyy'),1500,1400,30);
+
+insert into EMP_4 values(7957,'ADAMS','CLERK', 6785 , to_date('5-10-1981','dd-mm-yyyy'),1200,1500,30);
+
+insert into EMP_4 values(7932,'JAMES','CLERK', 7583 , to_date('3-4-1981','dd-mm-yyyy'),1300,100,30);
+
+insert into EMP_4 values(7900,'MILLER','CLERK', 7754 , to_date('6-3-1981','dd-mm-yyyy'),1800,500,30);
+
+basic-query-1:
+Select * from  EMP_4;
+Describe  EMP_4;
+Select * from Tab;
+Select empno from EMP_4;
+Select ename,job  from EMP_4;
+Select empno,comm from EMP_4;
+Select empno,mgr from EMP_4;
+Select deptno from EMP_4;
+Select empno,ename,job,mgr from EMP_4;
+Select ename,mgr from EMP_4;
+Select job,comm from EMP_4;
+Select ename,deptno from EMP_4;
+Select deptno,ename,sal,job from EMP_4;
+Select deptno from EMP_4;
+
+BASIC QUERY-2
+
+Select * from EMP_4 where JOB='MANAGER';
+Select * from EMP_4 where JOB='PRESIDENT';
+Select * from EMP_4 where JOB='MANAGER' or JOB='CLERK';
+                                    OR
+Select * from EMP_4 where JOB in('MANAGER','CLERK');
+Select * from EMP_4 where JOB='MANAGER' and DEPTNO='10';
+Select * from EMP_4 where DEPTNO='10';
+Select * from EMP_4 where DEPTNO in(20,30,40) and JOB<>'MANAGER';
+Select * from EMP_4 where (JOB='MANAGER' and DEPTNO='10') or
+JOB='ANALYST';
+Select * from EMP_4 where JOB not in('PRESIDENT' ,'ANALYST',
+'SALESMAN');
+Select * from EMP_4 where JOB='CLERK' and DEPTNO='30';
+
+Formatting Commands:
+
+Select ENAME "MALAY" from EMP_4;
+Select SAL "SALARIES" from EMP_4;
+Select ENAME "EMPLOYEE NAME",JOB "DESIGNATION" from EMP_4;
+Select EMPNO, ENAME, JOB, SAL,SAL+100 from EMP_4 where
+JOB='MANAGER';
+Select EMPNO, ENAME, JOB, SAL, (SAL+1000)-4500 from EMP_4;
+Select EMPNO,ENAME, SAL, (SAL+100) from EMP_4 where
+ENAME='SCOTT';
+Select EMPNO, ENAME, SAL, ((SAL+500)-300)/100 from EMP_4;
+Select EMPNO, ENAME,SAL, (SAL*5)/100 from EMP_4;
+Select EMPNO, ENAME, SAL, (SAL*8/100) from EMP_4 where
+JOB='SALESMAN';
+Select EMPNO, ENAME, SAL, (SAL*2) from EMP_4;
+Select EMPNO, ENAME, SAL, (SAL/30) from EMP_4;
+Select EMPNO, ENAME, SAL, (SAL*12) "ANNSA" from EMP_4;
+Select EMPNO||' '||ENAME "EMPLOYEE" from EMP_4;
+Select ENAME||' '||JOB "COMP_NAME" from EMP_4;
+Select ENAME||' is '||JOB||' and he is working in DEPTNO
+'||DEPTNO||' Since '||hiredate from EMP_4;
+Select ENAME,SAL,(SAL*12)+NVL(COMM,0) from EMP_4;
+Select distinct DEPTNO from EMP_4;
+Select distinct DEPTNO, JOB from EMP_4;
+Select * from EMP_4 where COMM is null and JOB='MANAGER';
+Select * from EMP_4 where COMM is not null;
+Select distinct JOB from EMP_4;
+Select count(distinct JOB) from EMP_4;
+
+Joins, Subquery, Order by, Group by:
+
+Select * from EMP_4 order by hiredate desc;
+Select * from EMP_4 order by hiredate asc;
+Select * from EMP_4 where COMM>SAL;
+Select * from EMP_4 where COMM<SAL;
+Select * from EMP_4 where SAL>=500 and SAL<=1500;
+Select * from EMP_4 where MGR in (7982,7566,7788);
+Select * from EMP_4 where MGR between 7788 and 7902;
+Select * from EMP_4 where ENAME like 'S%';
+Select * from EMP_4 where ENAME='SCOTT';
+Select * from EMP_4 where JOB='MANAGER' and LENGTH(ENAME)=5;
+Select * from EMP_4 where MGR is null;
+Select * from EMP_4 where JOB not like 'A%';
+Select * from EMP_4 where MGR is not null;
+Select * from EMP_4 where JOB in ('MANAGER','CLERK') and DEPTNO='30';
+Select * from EMP_4 where JOB in('MANAGER','SALESMAN') and SAL>1500;
+Select JOB,AVG(SAL) from EMP_4 group by JOB;
+Select JOB,AVG(SAL) from EMP_4 group by JOB having JOB not in('MANAGER');
+Select JOB,AVG(SAL),DEPTNO from EMP_4 group by JOB,DEPTNO;
+Select DEPTNO,AVG(SAL),DEPTNO from EMP_4 group by DEPTNO;
+Select JOB ,SUM(SAL) from EMP_4 group by JOB having JOB not in('SALEMAN','CLERK','MANAGER');
+Select * from EMP_4 where SAL>(select SAL from EMP_4 where ENAME='BLAKE');
+Select * from EMP_4 where JOB =(select JOB from EMP_4 where ENAME='ALLEN');
+Select * from EMP_4 where hiredate < (select hiredate from EMP_4 where ENAME ='KING');
